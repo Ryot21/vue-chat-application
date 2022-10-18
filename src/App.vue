@@ -1,8 +1,55 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+	<div class="l-sideber c-fixed left">
+		<div class="l-userArea mg-b20">
+			<div class="c-avatar"></div>
+			<div class="c-avatar-name  mg-t5">アカウント名</div>
+		</div>
+		<nav class="l-navArea">
+			<ul class="navLists">
+				<li>
+          <router-link to="/" class="c-navLink">
+						<div class="c-navIcon mg-b10">
+							<img src="./images/user-solid.svg" alt="メンバーアイコン">
+						</div>
+						<div class="c-navTitle">
+							メンバー
+						</div>
+          </router-link>
+				</li>
+				<li>
+          <router-link to="/about" class="c-navLink">
+						<div class="c-navIcon mg-b10">
+							<img src="./images/comment-solid.svg" alt="トークアイコン">
+						</div>
+						<div class="c-navTitle">
+							トーク
+						</div>
+            </router-link>
+				</li>
+				<li>     |
+          <router-link to="/top">
+						<div class="c-navIcon mg-b10">
+							<img src="./images/user-solid.svg" alt="メンバーアイコン">
+						</div>
+						<div class="c-navTitle">
+							メンバー
+						</div>
+          </router-link>
+				</li>
+				<li>
+					<a href="/" class="c-navLink">
+						<div class="c-navIcon mg-b10">
+							<img src="./images/user-solid.svg" alt="メンバーアイコン">
+						</div>
+						<div class="c-navTitle">
+							メンバー
+						</div>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
   <router-view/>
 </template>
 
