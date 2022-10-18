@@ -324,28 +324,26 @@ video {
   color: #000;
   text-shadow: none; }
 
-.l-contents .l-main {
-  position: absolute;
-  right: 0;
+.l-contents {
   width: calc(100% - 200px); }
   @media screen and (max-width: 1024px) {
-    .l-contents .l-main {
+    .l-contents {
       width: calc(100% - 100px); } }
   @media screen and (max-width: 480px) {
-    .l-contents .l-main {
-      width: auto; } }
-
-.c-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .c-flex.c-flex-01 {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
-  .c-flex.c-flex-02 {
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
+    .l-contents {
+      width: calc(100% - 16%);
+      min-width: calc(100% - 60px); } }
+  .l-contents .l-main {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 200px); }
+    @media screen and (max-width: 1024px) {
+      .l-contents .l-main {
+        width: calc(100% - 100px); } }
+    @media screen and (max-width: 480px) {
+      .l-contents .l-main {
+        width: calc(100% - 16%);
+        min-width: calc(100% - 60px); } }
 
 .l-header {
   display: -webkit-box;
@@ -368,6 +366,15 @@ video {
     .l-header {
       min-width: calc(100% - 60px);
       min-height: 62px; } }
+  .l-header .header-title {
+    font-size: 25px;
+    font-weight: normal; }
+    @media screen and (max-width: 1024px) {
+      .l-header .header-title {
+        font-size: 23px; } }
+    @media screen and (max-width: 480px) {
+      .l-header .header-title {
+        font-size: 20px; } }
   .l-header .inputArea {
     position: relative;
     background: white;
@@ -523,7 +530,8 @@ video {
       width: 100px; } }
   @media screen and (max-width: 480px) {
     .l-sideber {
-      width: 60px; } }
+      width: 16%;
+      min-width: 60px; } }
 
 .l-userArea {
   padding: 15px;
@@ -575,8 +583,80 @@ video {
     .c-avatar-name {
       display: none; } }
 
+.userListsArea {
+  width: 100%;
+  max-width: 1185px;
+  margin: auto; }
+  @media screen and (max-width: 1024px) {
+    .userListsArea {
+      max-width: 900px; } }
+  @media screen and (max-width: 480px) {
+    .userListsArea {
+      min-width: 320px; } }
+  @media screen and (max-width: 320px) {
+    .userListsArea {
+      min-width: 320px; } }
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto; }
+  .flex-container .flex-item {
+    padding: 10px; }
+    .flex-container .flex-item.col-3 {
+      width: 33.333333333%;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 33.3333333333%;
+              flex: 0 0 33.3333333333%; }
+      .flex-container .flex-item.col-3 a {
+        height: 100px; }
+    .flex-container .flex-item.col-5 {
+      width: 20%;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 20%;
+              flex: 0 0 20%; }
+      @media screen and (max-width: 1024px) {
+        .flex-container .flex-item.col-5 {
+          width: 33.333333333%;
+          -webkit-box-flex: 0;
+              -ms-flex: 0 0 33.3333333333%;
+                  flex: 0 0 33.3333333333%; } }
+    .flex-container .flex-item .user-link {
+      display: block;
+      height: 150px;
+      margin: 10px;
+      background: #efefef;
+      -webkit-box-shadow: 0px 0px 10px 0px #efefef;
+              box-shadow: 0px 0px 10px 0px #efefef;
+      border-radius: 10px; }
+      @media screen and (max-width: 1024px) {
+        .flex-container .flex-item .user-link {
+          height: 120px; } }
+      @media screen and (max-width: 480px) {
+        .flex-container .flex-item .user-link {
+          height: 80px;
+          margin: 5px; } }
+
+.c-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .c-flex.c-flex-01 {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .c-flex.c-flex-02 {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: 'Zen Antique Soft', serif; }
   body .l-container {
     position: relative;
     width: 100vw; }

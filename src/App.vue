@@ -27,7 +27,7 @@
             </router-link>
 				</li>
 				<li>     |
-          <router-link to="/top">
+          <router-link to="/messagelists">
 						<div class="c-navIcon mg-b10">
 							<img src="./images/user-solid.svg" alt="メンバーアイコン">
 						</div>
