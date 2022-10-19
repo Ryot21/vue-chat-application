@@ -419,24 +419,64 @@ video {
       height: 35px; } }
 
 .messageListsArea {
-  background: white;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
-          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  background: #efefef;
   border-radius: 7px;
   margin: 15px; }
   @media screen and (max-width: 480px) {
     .messageListsArea {
-      margin-left: 77px !important;
       -webkit-box-shadow: none;
               box-shadow: none; } }
   .messageListsArea .dayTitle {
     color: #BCBBB6; }
-  .messageListsArea .c-messageLists li {
-    border-bottom: 1px solid #BCBBB6; }
-  .messageListsArea .c-messageBox .title {
-    color: #333; }
-  .messageListsArea .c-messageBox .description {
-    color: #BCBBB6; }
+  .messageListsArea .c-messageLists .me .c-flex .c-messageBox {
+    background: #ffffff;
+    margin-left: 20px; }
+    .messageListsArea .c-messageLists .me .c-flex .c-messageBox::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      top: 8px;
+      left: -15px;
+      border-left: 20px solid #ffffff;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      -webkit-transform: rotate(189deg);
+              transform: rotate(189deg); }
+  .messageListsArea .c-messageLists .you .c-flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse; }
+    .messageListsArea .c-messageLists .you .c-flex .c-messageBox {
+      background: #ffffff;
+      margin-right: 20px; }
+      .messageListsArea .c-messageLists .you .c-flex .c-messageBox::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        top: 8px;
+        right: -15px;
+        border-left: 20px solid #ffffff;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        -webkit-transform: rotate(353deg);
+                transform: rotate(353deg); }
+  .messageListsArea .c-messageBox {
+    position: relative;
+    border-radius: 5px;
+    margin: 10px 0; }
+    .messageListsArea .c-messageBox .title {
+      color: #333; }
+    .messageListsArea .c-messageBox .description {
+      color: #BCBBB6;
+      padding: 10px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
 
 .l-navArea .navLists {
   padding: 0;

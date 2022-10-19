@@ -12,40 +12,40 @@
 							<img src="./images/user-solid.svg" alt="メンバーアイコン">
 						</div>
 						<div class="c-navTitle">
-							メンバー
+							メンバーリスト
 						</div>
           </router-link>
 				</li>
 				<li>
+          <router-link to="/chat" class="c-navLink">
+						<div class="c-navIcon mg-b10">
+							<img src="./images/comment-solid.svg" alt="トークアイコン">
+						</div>
+						<div class="c-navTitle">
+							チャット
+						</div>
+          </router-link>
+				</li>
+								<!-- <li>
+          <router-link to="/messagelists" class="c-navLink">
+						<div class="c-navIcon mg-b10">
+							<img src="./images/user-solid.svg" alt="メンバーアイコン">
+						</div>
+						<div class="c-navTitle">
+							メッセージリスト
+						</div>
+          </router-link>
+				</li> -->
+        <!-- <li>
           <router-link to="/about" class="c-navLink">
 						<div class="c-navIcon mg-b10">
 							<img src="./images/comment-solid.svg" alt="トークアイコン">
 						</div>
 						<div class="c-navTitle">
-							トーク
+							About
 						</div>
             </router-link>
-				</li>
-				<li>     |
-          <router-link to="/messagelists">
-						<div class="c-navIcon mg-b10">
-							<img src="./images/user-solid.svg" alt="メンバーアイコン">
-						</div>
-						<div class="c-navTitle">
-							メンバー
-						</div>
-          </router-link>
-				</li>
-				<li>
-					<a href="/" class="c-navLink">
-						<div class="c-navIcon mg-b10">
-							<img src="./images/user-solid.svg" alt="メンバーアイコン">
-						</div>
-						<div class="c-navTitle">
-							メンバー
-						</div>
-					</a>
-				</li>
+				</li> -->
 			</ul>
 		</nav>
 	</div>
