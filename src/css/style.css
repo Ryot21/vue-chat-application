@@ -349,15 +349,16 @@ video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #efefef;
+  color: #efefef;
+  background: #333;
   min-width: calc(100% - 200px);
   min-height: 85px;
   padding: 0 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: -1px -1px 4px 0 #333;
-          box-shadow: -1px -1px 4px 0 #333; }
+  -webkit-box-shadow: -1px -1px 4px 0 #efefef;
+          box-shadow: -1px -1px 4px 0 #efefef; }
   @media screen and (max-width: 1024px) {
     .l-header {
       min-width: calc(100% - 100px);
@@ -375,34 +376,6 @@ video {
     @media screen and (max-width: 480px) {
       .l-header .header-title {
         font-size: 20px; } }
-  .l-header .inputArea {
-    position: relative;
-    background: white;
-    border-radius: 20px;
-    -webkit-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-            box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5); }
-    .l-header .inputArea::after {
-      position: absolute;
-      content: "";
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      background: url(../images/magnifying-glass-solid.svg) no-repeat;
-      background-size: contain;
-      top: 50%;
-      left: 5px;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%); }
-
-.c-fixed {
-  position: fixed;
-  top: 0; }
-  .c-fixed.right {
-    right: 0;
-    z-index: 999; }
-  .c-fixed.left {
-    left: 0;
-    z-index: 1000; }
 
 .l-icon {
   width: 40px;
@@ -419,7 +392,6 @@ video {
       height: 35px; } }
 
 .messageListsArea {
-  background: #efefef;
   border-radius: 7px;
   margin: 15px; }
   @media screen and (max-width: 480px) {
@@ -427,9 +399,36 @@ video {
       -webkit-box-shadow: none;
               box-shadow: none; } }
   .messageListsArea .dayTitle {
+    position: relative;
+    text-align: center;
     color: #BCBBB6; }
+    .messageListsArea .dayTitle::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      content: "";
+      height: .5px;
+      width: 30%;
+      max-width: 200px;
+      background: #BCBBB6; }
+    .messageListsArea .dayTitle::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      content: "";
+      height: .5px;
+      width: 30%;
+      max-width: 200px;
+      background: #BCBBB6; }
+    @media screen and (max-width: 480px) {
+      .messageListsArea .dayTitle::before, .messageListsArea .dayTitle::after {
+        width: 70px; } }
   .messageListsArea .c-messageLists .me .c-flex .c-messageBox {
-    background: #ffffff;
+    background: #4E4848;
     margin-left: 20px; }
     .messageListsArea .c-messageLists .me .c-flex .c-messageBox::before {
       content: '';
@@ -439,7 +438,7 @@ video {
       height: 0;
       top: 8px;
       left: -15px;
-      border-left: 20px solid #ffffff;
+      border-left: 20px solid #4E4848;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
       -webkit-transform: rotate(189deg);
@@ -450,7 +449,7 @@ video {
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse; }
     .messageListsArea .c-messageLists .you .c-flex .c-messageBox {
-      background: #ffffff;
+      background: #BCBBB6;
       margin-right: 20px; }
       .messageListsArea .c-messageLists .you .c-flex .c-messageBox::before {
         content: '';
@@ -460,11 +459,13 @@ video {
         height: 0;
         top: 8px;
         right: -15px;
-        border-left: 20px solid #ffffff;
+        border-left: 20px solid #BCBBB6;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
         -webkit-transform: rotate(353deg);
                 transform: rotate(353deg); }
+      .messageListsArea .c-messageLists .you .c-flex .c-messageBox .description {
+        color: #333; }
   .messageListsArea .c-messageBox {
     position: relative;
     border-radius: 5px;
@@ -487,7 +488,7 @@ video {
     -webkit-transition: 1s;
     transition: 1s; }
     .l-navArea .navLists li .c-navLink:hover {
-      background: #efefef;
+      background: #4E4848;
       -webkit-transition: 1s;
       transition: 1s; }
     @media screen and (max-width: 480px) {
@@ -498,6 +499,7 @@ video {
     width: 20px;
     margin: auto; }
   .l-navArea .navLists li .c-navTitle {
+    color: #efefef;
     text-align: center; }
     @media screen and (max-width: 1024px) {
       .l-navArea .navLists li .c-navTitle {
@@ -560,11 +562,12 @@ video {
       margin-bottom: 25px !important; } }
 
 .l-sideber {
-  background: white;
+  color: #ffffff;
+  background: #2f2f2f;
   width: 200px;
   height: 100vh;
-  -webkit-box-shadow: -1px 1px 4px 0 #333;
-          box-shadow: -1px 1px 4px 0 #333; }
+  -webkit-box-shadow: -1px 1px 4px 0 #efefef;
+          box-shadow: -1px 1px 4px 0 #efefef; }
   @media screen and (max-width: 1024px) {
     .l-sideber {
       width: 100px; } }
@@ -572,32 +575,6 @@ video {
     .l-sideber {
       width: 16%;
       min-width: 60px; } }
-
-.l-userArea {
-  padding: 15px;
-  border-bottom: 1px solid #4E4848; }
-  @media screen and (max-width: 1024px) {
-    .l-userArea {
-      padding: 10px; } }
-  @media screen and (max-width: 480px) {
-    .l-userArea {
-      border-bottom: none; } }
-
-.c-avatar {
-  height: 75px;
-  width: 75px;
-  margin: 0 auto;
-  background: #4E4848;
-  border-radius: 50%;
-  overflow: hidden; }
-  @media screen and (max-width: 1024px) {
-    .c-avatar {
-      height: 60px;
-      width: 60px; } }
-  @media screen and (max-width: 480px) {
-    .c-avatar {
-      height: 42px;
-      width: 42px; } }
 
 .c-avatar__small {
   min-width: 50px;
@@ -616,12 +593,6 @@ video {
       min-width: 42px;
       height: 42px;
       min-height: 42px; } }
-
-.c-avatar-name {
-  text-align: center; }
-  @media screen and (max-width: 1024px) {
-    .c-avatar-name {
-      display: none; } }
 
 .userListsArea {
   width: 100%;
@@ -671,8 +642,8 @@ video {
       height: 150px;
       margin: 10px;
       background: #efefef;
-      -webkit-box-shadow: 0px 0px 10px 0px #efefef;
-              box-shadow: 0px 0px 10px 0px #efefef;
+      -webkit-box-shadow: 0px 0px 4px 0px #4E4848;
+              box-shadow: 0px 0px 4px 0px #4E4848;
       border-radius: 10px; }
       @media screen and (max-width: 1024px) {
         .flex-container .flex-item .user-link {
@@ -694,7 +665,97 @@ video {
     -ms-flex-pack: distribute;
         justify-content: space-around; }
 
+.l-inputArea__chatBoard {
+  color: #efefef;
+  background: #333;
+  min-width: calc(100% - 200px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 1px 4px 0 #efefef;
+          box-shadow: 0 1px 4px 0 #efefef; }
+  @media screen and (max-width: 1024px) {
+    .l-inputArea__chatBoard {
+      min-width: calc(100% - 100px); } }
+  @media screen and (max-width: 480px) {
+    .l-inputArea__chatBoard {
+      min-width: calc(100% - 60px); } }
+  .l-inputArea__chatBoard textarea {
+    color: #efefef;
+    width: 100%;
+    line-height: 1.3;
+    resize: none;
+    outline: none; }
+
+.l-inputArea__kensaku {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5); }
+  .l-inputArea__kensaku::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../images/magnifying-glass-solid.svg) no-repeat;
+    background-size: contain;
+    top: 50%;
+    left: 5px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+
+.c-fixed {
+  position: fixed; }
+  .c-fixed.right {
+    top: 0;
+    right: 0;
+    z-index: 999; }
+  .c-fixed.left {
+    top: 0;
+    left: 0;
+    z-index: 1000; }
+  .c-fixed.bottom {
+    bottom: 0;
+    right: 0;
+    z-index: 999; }
+
+.l-appArea {
+  padding: 15px;
+  border-bottom: 1px solid #4E4848; }
+  @media screen and (max-width: 1024px) {
+    .l-appArea {
+      padding: 10px; } }
+  @media screen and (max-width: 480px) {
+    .l-appArea {
+      border-bottom: none; } }
+
+.c-app {
+  height: 75px;
+  width: 75px;
+  margin: 0 auto;
+  background: #4E4848;
+  border-radius: 50%;
+  overflow: hidden; }
+  @media screen and (max-width: 1024px) {
+    .c-app {
+      height: 60px;
+      width: 60px; } }
+  @media screen and (max-width: 480px) {
+    .c-app {
+      height: 42px;
+      width: 42px; } }
+
+.c-app-name {
+  text-align: center; }
+  @media screen and (max-width: 1024px) {
+    .c-app-name {
+      display: none; } }
+
 body {
+  color: #efefef;
+  background: #333;
   margin: 0;
   font-family: 'Zen Antique Soft', serif; }
   body .l-container {

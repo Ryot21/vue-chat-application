@@ -3,7 +3,7 @@
 		v-for="day in days"
 		:key="day"
 	>
-		<p class="dayTitle mg-b10">{{ day }}</p>
+		<p class="dayTitle mg-b20">{{ day }}</p>
 		<ul class="c-messageLists">
 			<li class="me pd-b10 pd-l5 mg-b10"
 				v-for="message in messages"
@@ -44,10 +44,12 @@ export default {
 		return{
 			user_id: '',
 			days: ['Today'],
-			messages: 8
+			messages: 8,
+			value: ""
 		}
 	}
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -2,9 +2,8 @@
   <div class="l-container c-flex">
     <!-- <SideBer></SideBer> -->
     <div class="l-contents">
-      <HeadBer></HeadBer>
+      <HeadBerComponents></HeadBerComponents>
       <main class="l-main main-mg-top">
-        <!-- <TopContents></TopContents> -->
         ABOUT
       </main>
     </div>
@@ -13,15 +12,12 @@
 
 <script>
 // @ is an alias to /src
-import HeadBer from '@/components/HeadBer.vue';
-// import TopContents from '@/components/TopContents.vue';
-import '../css/style.css';
+import HeadBerComponents from '@/components/HeadBerComponents.vue';
 
 export default {
-name: 'TopView',
-components: {
-  HeadBer,
-  // TopContents
-}
+  name: 'TopView',
+  components: {
+    HeadBerComponents,
+  }
 }
 </script>

@@ -2,25 +2,28 @@
   <div class="l-container c-flex">
     <!-- <SideBer></SideBer> -->
     <div class="l-contents">
-      <HeadBer></HeadBer>
+      <HeadBerComponents></HeadBerComponents>
       <main class="l-main main-mg-top">
         <ChatComponents></ChatComponents>
       </main>
+      <CustomTextareaComponents></CustomTextareaComponents>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HeadBer from '@/components/HeadBer.vue';
+import HeadBerComponents from '@/components/HeadBerComponents.vue';
 import ChatComponents from '@/components/ChatComponents.vue';
-import '../css/style.css';
+import CustomTextareaComponents from '@/components/CustomTextareaComponents.vue';
+
 
 export default {
-  name: 'MessageListsView',
+  name: 'ChatBoardView',
   components: {
-    HeadBer,
-    ChatComponents
+    HeadBerComponents,
+    ChatComponents,
+    CustomTextareaComponents
   }
 }
 </script>
