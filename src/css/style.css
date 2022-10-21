@@ -664,6 +664,10 @@ video {
   .c-flex.c-flex-02 {
     -ms-flex-pack: distribute;
         justify-content: space-around; }
+  .c-flex.c-flex-03 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
 
 .l-inputArea__chatBoard {
   color: #efefef;
@@ -752,6 +756,14 @@ video {
   @media screen and (max-width: 1024px) {
     .c-app-name {
       display: none; } }
+
+.l-btnArea {
+  margin-bottom: 10px; }
+  @media screen and (max-width: 480px) {
+    .l-btnArea {
+      margin-bottom: 20px; } }
+  .l-btnArea button {
+    margin: 0 5px; }
 
 body {
   color: #efefef;

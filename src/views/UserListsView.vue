@@ -15,10 +15,10 @@ import HeadBerComponents from '@/components/HeadBerComponents.vue';
 import UserListsContents from '@/components/UserListsContents.vue';
 
 export default {
-name: 'UserListsView',
-components: {
-  HeadBerComponents,
-  UserListsContents
-}
+  name: 'UserListsView',
+  components: {
+    HeadBerComponents,
+    UserListsContents
+  }
 }
 </script>
