@@ -1,18 +1,19 @@
 <template>
-	<section class="messageListsArea pd-10 message-mg-bottom"
+	<main class="l-main main-mg-top">
+		<section class="messageListsArea pd-10 message-mg-bottom"
 		v-for="day in days"
 		:key="day"
 	>
 		<p class="dayTitle mg-b20">{{ day }}</p>
 		<ul class="c-messageLists">
 			<li class="me pd-b10 pd-l5 mg-b10"
-				v-for="message in messages"
-				:key="message"
+				v-for="(data, index) in messages"
+				:key="index"
 			>
 				<div class="c-flex">
 					<div class="c-avatar__small"></div>
 					<div class="c-messageBox">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil repellendus distinctio similique</p>
+						<p class="description">{{ index }} : {{ data.message }}</p>
 					</div>
 				</div>
 			</li>
@@ -27,13 +28,46 @@
 			</li>
 		</ul>
 	</section>
+	</main>
+	<!-- <CustomTextareaComponents></CustomTextareaComponents> -->
+	<div class="l-inputArea__chatBoard c-fixed bottom">
+		<form method="post" @submit.prevent="submit">
+			<textarea
+				class="pd-10"
+				v-model="body"
+				:rows="rows"
+				placeholder="メッセージを入力">
+			</textarea>
+			<div class="l-btnArea c-flex c-flex-03">
+				<AddButtonComponents 
+						:button-text="pushBtn.btnText"
+						:btn-style="pushBtn.btnStyle"
+						:disabled="textCheck"
+						@click="push"
+					>
+				</AddButtonComponents>
+				<AddButtonComponents 
+						:button-text="clearBtn.btnText" 
+						:btn-style="clearBtn.btnStyle"
+						@click="clear"
+					>
+				</AddButtonComponents>
+			</div>
+		</form>
+	</div>
+
 </template>
 
 <script>
+// import CustomTextareaComponents from '@/components/CustomTextareaComponents.vue';
+import AddButtonComponents from '@/components/AddButtonComponents.vue'
+
+
 export default {
   name: 'ChatComponents',
-  props: {
-    
+  components: {
+		// CustomTextareaComponents
+		AddButtonComponents
   },
 	created(){
     // const user_id = this.$route.query.user_id;
@@ -44,8 +78,42 @@ export default {
 		return{
 			user_id: '',
 			days: ['Today'],
-			messages: 8,
-			value: ""
+			messages: [],
+			body:"",//textarea内のテキストが入る箱
+			pushBtn:{
+				btnText: '送信する',
+				btnStyle: 'reverse',
+			},
+			clearBtn:{
+				btnText: 'キャンセル',
+				btnStyle: 'cancel',
+			}
+		}
+	},
+	computed:{
+		rows(){//textarea内の改行を検知してtextareaの高さを調整する
+			let num = this.body.split("\n").length;
+			return (num > 3) ? num : 3;
+		},
+		textCheck(){//textareaに文字入力されているかの確認
+			if( !this.body ){
+				return true
+			}
+			return false
+		},
+	},
+	mounted() {
+	},
+	methods: {
+		push(){
+			console.log({ message: this.body });
+			this.messages.push({ message: this.body });
+			// this.messages.unshift({ message: this.body });
+			this.body = "";
+		},
+		clear(){
+			console.log("clearメソッド");
+			this.body = "";
 		}
 	}
 }
@@ -54,5 +122,28 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.reverse {
+  background: #e9db40;
+  color: black;
+  border: 1px solid transparent;
+}
 
+.reverse:hover,
+.reverse:active {
+  background: #b8ac25;
+  border: 1px solid transparent;
+}
+
+.cancel {
+  background: #777070;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.cancel:hover,
+.cancel:active {
+  background: #6a6363;
+  border: 1px solid transparent;
+  color: white;
+}
 </style>
