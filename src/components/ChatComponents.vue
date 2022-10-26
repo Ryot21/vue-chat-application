@@ -59,20 +59,42 @@
 </template>
 
 <script>
-// import CustomTextareaComponents from '@/components/CustomTextareaComponents.vue';
-import AddButtonComponents from '@/components/AddButtonComponents.vue'
 
+import firebase from "firebase/app";
+import "firebase/firestore";
+import AddButtonComponents from '@/components/AddButtonComponents.vue';
 
 export default {
   name: 'ChatComponents',
   components: {
-		// CustomTextareaComponents
 		AddButtonComponents
   },
-	created(){
+	async created(){
     // const user_id = this.$route.query.user_id;
-		this.user_id = this.$route.query.user_id;//data内で指定先（user_id）がある場合は「this」を使用する
-		console.log("user_id: " + this.user_id);
+		// this.user_id = this.$route.query.user_id;//data内で指定先（user_id）がある場合は「this」を使用する
+		// console.log("user_id: " + this.user_id);
+
+		const firebaseConfig = {
+			apiKey: "AIzaSyDldzSqBqro_UJLINocI3-S1-tbo6gC2HY",
+			authDomain: "vuechat-4c6dc.firebaseapp.com",
+			projectId: "vuechat-4c6dc",
+			storageBucket: "vuechat-4c6dc.appspot.com",
+			messagingSenderId: "506418610193",
+			appId: "1:506418610193:web:38a80e9e37311b6ae0b1b0"
+		};
+
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		const db = firebase.firestore();
+		const chatRef = db.collection('chats');
+		const snapShot = await chatRef.get();
+		// console.log(snapShot);
+
+		snapShot.forEach(doc => {
+			// console.log(doc.data())
+			this.messages.push(doc.data())
+		})
   },
 	data(){
 		return{
