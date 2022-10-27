@@ -145,7 +145,10 @@ sup {
    # Forms
    # ================================================================= */
 input {
-  border-radius: 0; }
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: .5px 1px 2px #bababa99;
+          box-shadow: .5px 1px 2px #bababa99; }
 
 /* Apply cursor pointer to button elements */
 button,
@@ -222,8 +225,6 @@ select {
   /* Firefox 40+, Internet Explorer 11- */ }
 
 /* Remove the default button styling in all browsers */
-button,
-input,
 select,
 textarea {
   background-color: transparent;
@@ -710,6 +711,15 @@ video {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); }
 
+.l-inputArea__login {
+  margin: 0 auto;
+  text-align: center; }
+  .l-inputArea__login input {
+    width: 100%;
+    max-width: 350px;
+    padding: 3px 5px;
+    background: #b6ebff61; }
+
 .c-fixed {
   position: fixed; }
   .c-fixed.right {
@@ -762,8 +772,123 @@ video {
   @media screen and (max-width: 480px) {
     .l-btnArea {
       margin-bottom: 20px; } }
+  .l-btnArea.-center {
+    text-align: center; }
   .l-btnArea button {
     margin: 0 5px; }
+  .l-btnArea .loginBtn {
+    width: 100%;
+    max-width: 350px;
+    padding: 5px 0;
+    margin: auto;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    background: #3d90a8;
+    -webkit-box-shadow: 1px 1px 2px #bababa99;
+            box-shadow: 1px 1px 2px #bababa99;
+    border-radius: 5px;
+    -webkit-transition: .3s;
+    transition: .3s; }
+    .l-btnArea .loginBtn:hover {
+      background: #1fabd1;
+      -webkit-transition: .3s;
+      transition: .3s; }
+  .l-btnArea .entryBtn {
+    width: 150px;
+    padding: 5px 0;
+    margin: auto;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    background: #42a83d;
+    -webkit-box-shadow: 1px 1px 2px #bababa99;
+            box-shadow: 1px 1px 2px #bababa99;
+    border-radius: 5px;
+    -webkit-transition: .3s;
+    transition: .3s; }
+    .l-btnArea .entryBtn:hover {
+      background: #45c13f;
+      -webkit-transition: .3s;
+      transition: .3s; }
+
+.c-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; }
+  .c-modal.bg {
+    background: rgba(135, 135, 135, 0.593); }
+  .c-modal .modalBlock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 5px; }
+    .c-modal .modalBlock.-login {
+      height: 31vh;
+      width: 50vw; }
+      @media screen and (max-width: 1024px) {
+        .c-modal .modalBlock.-login {
+          height: 25vh;
+          min-height: 325px; } }
+      @media screen and (max-width: 480px) {
+        .c-modal .modalBlock.-login {
+          height: 45vh;
+          width: 90vw; } }
+      @media screen and (max-width: 320px) {
+        .c-modal .modalBlock.-login {
+          height: 55vh;
+          width: 90vw; } }
+  .c-modal .modalWrap {
+    position: relative;
+    height: 100%;
+    padding: 1.0416666667vw 5vw; }
+    @media screen and (max-width: 1024px) {
+      .c-modal .modalWrap {
+        padding: 1.0416666667vw 1.0416666667vw; } }
+    @media screen and (max-width: 480px) {
+      .c-modal .modalWrap {
+        padding: 5vw 5vw; } }
+  .c-modal .loginTitle {
+    color: #333;
+    text-align: center; }
+  .c-modal .loginOrText {
+    width: 100%;
+    color: #333;
+    text-align: center;
+    position: relative; }
+    .c-modal .loginOrText::before {
+      content: "";
+      width: 15vw;
+      height: .5px;
+      background: #333;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      @media screen and (max-width: 480px) {
+        .c-modal .loginOrText::before {
+          width: 25vw; } }
+    .c-modal .loginOrText::after {
+      content: "";
+      width: 15vw;
+      height: .5px;
+      background: #333;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      @media screen and (max-width: 480px) {
+        .c-modal .loginOrText::after {
+          width: 25vw; } }
 
 body {
   color: #efefef;
