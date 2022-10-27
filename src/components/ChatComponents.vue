@@ -29,7 +29,6 @@
 		</ul>
 	</section>
 	</main>
-	<!-- <CustomTextareaComponents></CustomTextareaComponents> -->
 	<div class="l-inputArea__chatBoard c-fixed bottom">
 		<form method="post" @submit.prevent="submit">
 			<textarea
@@ -59,9 +58,9 @@
 </template>
 
 <script>
-
 import firebase from "firebase/app";
 import "firebase/firestore";
+
 import AddButtonComponents from '@/components/AddButtonComponents.vue';
 
 export default {
